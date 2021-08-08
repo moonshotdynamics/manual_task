@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,12 +9,31 @@
 }
 
 .main {
+  height: 100vh;
+  width: 100vw;
   padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.heroImage {
+  background-image: url("/public/assets/img/hair-cat-header@3x.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+img.hairCat-header {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 80px;
+  /* padding: 30px 600px 120px 80px; */
+  object-fit: contain;
 }
 
 .footer {
@@ -24,6 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #e5f5f4;
 }
 
 .footer a {
@@ -31,6 +51,10 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+.footer ul {
+  list-style: none;
 }
 
 .title a {
@@ -45,19 +69,39 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  width: 600px;
+  height: 200px;
+  margin: 104.6px 0 22px;
+  font-size: 82px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: var(--pine-green);
 }
 
 .title,
 .description {
-  text-align: center;
+  text-align: left;
+  color: #0c3c3d;
 }
 
 .description {
-  line-height: 1.5;
-  font-size: 1.5rem;
+  line-height: 26px;
+  font-size: 18px;
+  color: #0c3c3d;
+  width: 400px;
+  height: 80px;
+  margin: 22px 190px 38px 10px;
+  font-family: Helvetica;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  color: var(--pine-green);
 }
 
 .code {
@@ -66,16 +110,49 @@
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+    Bitstream Vera Sans Mono, Courier New, monospace, Montserrat, Helvetica;
+}
+
+.button {
+  background: #34d1d1;
+  color: white;
+  border-radius: 49.5px;
+  width: 200px;
+  height: 48px;
+  border: none;
+  margin: 38px 390px 0 10px;
+  box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.5);
+  padding: 17px 37px 16px 38px;
+}
+
+.button:hover {
+  background: #0c3c3d;
+  transition: 0.2s;
 }
 
 .grid {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+}
+
+.grid title {
+  width: 361px;
+  height: 48px;
+  margin: 0 243px 60px 244px;
+  font-family: Helvetica;
+  font-size: 36px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0c3c3d;
 }
 
 .card {

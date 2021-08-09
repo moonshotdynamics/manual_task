@@ -3,14 +3,33 @@ import TextOption from "./TextOption";
 import ImageOption from "./ImageOption";
 import Answer from "../answer/Answer";
 
-function QuestionOptions({ title, value, type, reject, answer }) {
-  const [selection, setSelection] = useState(false);
+function QuestionOptions({
+  title,
+  value,
+  type,
+  reject,
+  answer,
+  setQuizStatus,
+  quizLength,
+}) {
+  const [selection, setSelection] = useState(null);
+  const [count, setCount] = useState(1);
 
-  if (selection) {
-    return <Answer quizResult={selection} />;
-  }
+  const handleSelect = () => {
+    setCount(count + 1);
+    console.log(selection);
+    console.log(count);
+    if (selection) {
+      //if selection is true, then
+      setQuizStatus(false); //tells quiz that user is not a good fit
+    }
+    if (count === quizLength) {
+      setQuizStatus(true);
+    }
+  };
+
   return (
-    <div>
+    <div onClick={handleSelect}>
       {type === "img" ? (
         <ImageOption
           value={value}

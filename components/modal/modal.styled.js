@@ -42,6 +42,11 @@ export const Close = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+  color: #0c3c3d;
+
+  &:hover {
+    color: #34d1d1;
+  }
 `;
 
 export const Wrapper = styled.section`

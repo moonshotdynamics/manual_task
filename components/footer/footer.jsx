@@ -7,12 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Style = styled.div`
-  .container {
+  /* .container {
     display: flex;
     background: #e5f5f4;
     width: 100%;
     height: 100%;
-  }
+  } */
 
   .footer {
   display: flex;
@@ -24,6 +24,8 @@ const Style = styled.div`
   position: relative;
   flex-direction: column;
 
+}
+
   .logo {
     width: 80px;
     height: 75px;
@@ -31,7 +33,8 @@ const Style = styled.div`
     left: 78px;
     top: 78px;
   }
-}
+
+
 
 .footer__links {
   display: flex;
@@ -151,7 +154,7 @@ const UL = styled.ul`
 function Footer() {
   return (
     <Style>
-      <footer>
+      <div className="footer">
         <Image className="logo" src={logo__footer} alt="footer__logo" />
 
         <div className="footer__links">
@@ -202,7 +205,7 @@ function Footer() {
         <hr />
 
         <h6 className="copyr">© 2019 Manual. All rights reserved.</h6>
-      </footer>
+      </div>
     </Style>
   );
 }

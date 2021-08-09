@@ -11,11 +11,13 @@ import {
 import Backdrop from "./Backdrop";
 import Question from "../question/Question";
 import { FaRegWindowClose } from "react-icons/fa";
+import Answer from "../answer/Answer";
 
 function Popup({ show, modalClosed, title, content }) {
   const [index, setIndex] = useState(0);
   const [arrLength, setArrLength] = useState();
   const [prevButton, setPrevButton] = useState("Cancel");
+  const [quizStatus, setQuizStatus] = useState(null);
 
   useEffect(() => {
     const length = content.questions.length;
@@ -51,7 +53,17 @@ function Popup({ show, modalClosed, title, content }) {
           <div>
             <Title>{title}</Title>
           </div>
-          <Content>{<Question content={content} index={index} />}</Content>
+          <Content>
+            {quizStatus === null ? (
+              <Question
+                content={content}
+                index={index}
+                setQuizStatus={setQuizStatus}
+              />
+            ) : (
+              <Answer quizResult={quizStatus} />
+            )}
+          </Content>
           <div className="box-footer">
             {index === 0 ? (
               <ButtonCancel onClick={modalClosed}>Cancel</ButtonCancel>

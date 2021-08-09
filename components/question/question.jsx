@@ -17,8 +17,7 @@ const Style = styled.div`
   }
 `;
 
-function Question({ content, index }) {
-  const [quizComplete, setQuizComplete] = useState(false);
+function Question({ content, index, setQuizStatus }) {
   const [questionBank, setQuestionBank] = useState(content.questions);
 
   useEffect(() => {
@@ -51,12 +50,14 @@ function Question({ content, index }) {
               return (
                 <>
                   <QuestionOptions
-                    key={value}
+                    key={questionBank[index]}
                     value={value} //Image url or Yes/No
                     title={key}
                     answer={option.value}
                     reject={option.isRejection}
                     type={questionBank[index].optionType}
+                    setQuizStatus={setQuizStatus}
+                    quizLength={questionBank.length}
                   />
                 </>
               );

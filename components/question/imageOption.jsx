@@ -27,16 +27,10 @@ const Style = styled.div`
 function ImageOption({ title, value, reject, answer, setSelection }) {
   const [ans, setAns] = useState(false);
   const [selected, setSelected] = useState(false);
-  // useEffect(() => {
-  //   if (sessionStorage.getItem("selectedResponse")) {
-  //     setSelected(true);
-  //   }
-  // }, []);
 
   const handleSelectClick = () => {
     setSelected(true);
     setSelection(reject);
-    // sessionStorage.setItem("selectedResponse", reject);
   };
   return (
     <Style>

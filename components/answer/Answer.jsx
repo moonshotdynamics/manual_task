@@ -6,9 +6,13 @@ const Style = styled.div`
     font-size: 24px;
     font-weight: medium;
   }
+  .a {
+    font-size: 24px;
+  }
 `;
 
-function Answer(quizResult) {
+function Answer({ quizResult }) {
+  console.log(quizResult);
   return (
     <Style>
       {quizResult ? (

@@ -38,6 +38,12 @@ export const Content = styled.div`
   }
 `;
 
+export const Close = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+`;
+
 export const Wrapper = styled.section`
   .box-header {
     height: 85px;

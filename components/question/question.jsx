@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import QuestionOptions from "./questionOptions";
+import QuestionOptions from "./QuestionOptions";
 import styled from "styled-components";
 
 const Style = styled.div`
@@ -7,6 +7,13 @@ const Style = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-top: 0.5rem;
+    justify-content: space-evenly;
+  }
+
+  .question {
+    font-size: 24px;
+    color: #0c3c3d;
+    text-align: center;
   }
 `;
 
@@ -33,19 +40,22 @@ function Question({ content, index }) {
   return (
     <Style>
       <div>
-        <h1>{questionBank[index].question}</h1>
+        <h1 className="question">{questionBank[index].question}</h1>
       </div>
       <div className="answerList">
         {questionBank[index].options
           ? questionBank[index].options.map((option) => {
-              const key = Object.keys(option)[0];
+              //option is the object of
+              const key = Object.keys(option)[0]; // use this to get the value below
               const value = option[key];
               return (
                 <>
                   <QuestionOptions
                     key={value}
-                    value={value}
+                    value={value} //Image url or Yes/No
                     title={key}
+                    answer={option.value}
+                    reject={option.isRejection}
                     type={questionBank[index].optionType}
                   />
                 </>

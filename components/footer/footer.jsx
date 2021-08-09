@@ -44,7 +44,8 @@ const Style = styled.div`
   margin-left: 100px; //responsive low res bug
 
   &__title {
-    color: $buttonColor;
+    color: 
+#34d1d1;
     letter-spacing: 2.4px;
     font-family: $titleFont;
     font-weight: bold;
@@ -56,17 +57,19 @@ const Style = styled.div`
     font-size: 14px;
     line-height: 36px;
     letter-spacing: 0px;
-    color: $titleColor;
+    color: 
+#0c3c3d;
     font-family: $parFont;
   }
 }
 
 .social_media_icons {
   display: flex;
+;
 }
 
-.social_media_icons img {
-  margin-top: 10px;
+.social_media_icons_img {
+    margin: 20px 30px auto 30px; 
 }
 
 @media screen and (max-width: 1125px) {
@@ -182,13 +185,16 @@ function Footer() {
             <h3 className="footer__link__title">FOLLOW US</h3>
 
             <div className="social_media_icons">
-              {/* <img src={fb} alt="facebook" />  */}
-              <FaFacebookF />
-              {/* <img className="twt" src={tw} alt="twitter" /> */}
-              <FaTwitter />
-
-              {/* <img src={inn} alt="linkedIn" /> */}
-              <FaLinkedin />
+              <div className="social_media_icons_img">
+                <FaFacebookF />{" "}
+              </div>
+              <div className="social_media_icons_img">
+                {" "}
+                <FaTwitter />
+              </div>
+              <div className="social_media_icons_img">
+                <FaLinkedin />
+              </div>
             </div>
           </div>
         </div>

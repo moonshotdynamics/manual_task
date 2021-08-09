@@ -6,9 +6,11 @@ import {
   Button,
   ButtonCancel,
   Content,
-} from "./modal.styled";
-import Backdrop from "./backdrop";
-import Question from "../question/question";
+  Close,
+} from "./Modal.styled";
+import Backdrop from "./Backdrop";
+import Question from "../question/Question";
+import { FaRegWindowClose } from "react-icons/fa";
 
 function Popup({ show, modalClosed, title, content }) {
   const [index, setIndex] = useState(0);
@@ -43,6 +45,9 @@ function Popup({ show, modalClosed, title, content }) {
         }}
       >
         <Wrapper>
+          <Close onClick={modalClosed}>
+            <FaRegWindowClose />
+          </Close>
           <div>
             <Title>{title}</Title>
           </div>

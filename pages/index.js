@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from "../components/footer/footer.jsx";
+import Footer from "../components/footer/Footer.jsx";
 import styles from "../styles/Home.module.css";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
-import Modal from "../components/modal/modal";
+import Modal from "../components/modal/Modal";
 import heroImage from "../public/assets/img/hair-cat-header.jpg";
 
 export const getStaticProps = async () => {

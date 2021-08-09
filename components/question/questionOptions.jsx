@@ -3,7 +3,6 @@ import TextOption from "./TextOption";
 import ImageOption from "./ImageOption";
 
 function QuestionOptions({ title, value, type }) {
-  console.log(type);
   //   console.log(value);
   return (
     <div>

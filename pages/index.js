@@ -5,6 +5,7 @@ import Footer from "../components/footer/footer.jsx";
 import styles from "../styles/Home.module.css";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Modal from "../components/modal/modal";
+import heroImage from "../public/assets/img/hair-cat-header.jpg";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -28,8 +29,6 @@ export default function Home({ questionList }) {
     setModalIsOpen(false);
   };
 
-  // console.log(questionList.questions);
-
   return (
     <div className={styles.container}>
       <Modal
@@ -45,6 +44,8 @@ export default function Home({ questionList }) {
       </Head>
 
       <main className={styles.main}>
+        <Image src={heroImage} alt="heroImage" />
+
         <div>
           <h1 className={styles.title}>
             BE GOOD <br />

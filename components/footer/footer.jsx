@@ -2,7 +2,9 @@ import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedin } from "react-icons/fa";
 import styles from "../../styles/Home.module.css";
 import styled from "styled-components";
-import logo__footer from "../../public/assets/img/svg/manual-symblol.svg";
+import logo__footer from "../../public/assets/img/svg/manual-symbol.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 const Style = styled.div`
   .container {
@@ -147,33 +149,33 @@ function Footer() {
   return (
     <Style>
       <footer>
-        <img className="logo" src={logo__footer} alt="footer__logo" />
+        <Image className="logo" src={logo__footer} alt="footer__logo" />
 
         <div className="footer__links">
           <div className="footer__link">
             <h3 className="footer__link__title">PRODUCT</h3>
-            <a href="/">Popular</a>
-            <a href="/">Trending</a>
-            <a href="/">Guided</a>
-            <a href="/">Products</a>
+            <Link href="/">Popular</Link>
+            <Link href="/">Trending</Link>
+            <Link href="/">Guided</Link>
+            <Link href="/">Products</Link>
           </div>
 
           <div className="footer__link company-parent">
             <h3 className="footer__link__title">COMPANY</h3>
 
-            <a href="/">Press Releases</a>
-            <a href="/">Mission</a>
-            <a href="/">Strategy</a>
-            <a href="/">About</a>
+            <Link href="/">Press Releases</Link>
+            <Link href="/">Mission</Link>
+            <Link href="/">Strategy</Link>
+            <Link href="/">About</Link>
           </div>
 
           <div className="footer__link">
             <h3 className="footer__link__title">INFO</h3>
 
-            <a href="/">Support</a>
-            <a href="/">Custom Service</a>
-            <a href="/">Get Started Guide</a>
-            <a href="/">Products</a>
+            <Link href="/">Support</Link>
+            <Link href="/">Custom Service</Link>
+            <Link href="/">Get Started Guide</Link>
+            <Link href="/">Products</Link>
           </div>
 
           <div className="footer__link social-media">

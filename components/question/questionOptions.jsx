@@ -25,7 +25,6 @@ function QuestionOptions({
   const handleSelect = () => {
     setSelected(() => true);
     sessionStorage.setItem(id, answer);
-    console.log(answer);
 
     if (answer) {
       //if answer is true, then

@@ -17,12 +17,15 @@ const Style = styled.div`
   }
 `;
 
-function Question({ content, index, setQuizStatus }) {
+function Question({ content, setQuizStatus, index, setQuizResult }) {
   const [questionBank, setQuestionBank] = useState(content.questions);
 
   useEffect(() => {
     const parseQuestions = () => {
+      let id = 0;
       for (const question of questionBank) {
+        id += 1;
+        question.id = id;
         if (question.options[0].display.includes("img")) {
           question.optionType = "img";
         } else if (
@@ -53,11 +56,13 @@ function Question({ content, index, setQuizStatus }) {
                     key={questionBank[index]}
                     value={value} //Image url or Yes/No
                     title={key}
-                    answer={option.value}
-                    reject={option.isRejection}
+                    answer={option.isRejection}
                     type={questionBank[index].optionType}
                     setQuizStatus={setQuizStatus}
                     quizLength={questionBank.length}
+                    index={index}
+                    setQuizResult={setQuizResult}
+                    id={questionBank[index].id}
                   />
                 </>
               );

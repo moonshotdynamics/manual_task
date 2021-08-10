@@ -13,12 +13,23 @@ import Question from "../question/Question";
 import { FaRegWindowClose } from "react-icons/fa";
 import Answer from "../answer/Answer";
 
-function Popup({ show, modalClosed, title, content }) {
-  const [index, setIndex] = useState(0);
+function Popup({
+  show,
+  modalClosed,
+  title,
+  content,
+  selected,
+  setSelected,
+  quizStatus,
+  setQuizStatus,
+  index,
+  setIndex,
+}) {
+  // const [index, setIndex] = useState(0);
   const [arrLength, setArrLength] = useState();
   const [prevButton, setPrevButton] = useState("Cancel");
-  const [quizStatus, setQuizStatus] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(false);
+  const [quizResult, setQuizResult] = useState();
 
   useEffect(() => {
     const length = content.questions.length;
@@ -55,14 +66,17 @@ function Popup({ show, modalClosed, title, content }) {
             <Title>{title}</Title>
           </div>
           <Content>
-            {quizStatus === null ? (
+            {quizStatus === "untouched" || quizStatus === "busy" ? (
               <Question
                 content={content}
-                index={index}
                 setQuizStatus={setQuizStatus}
+                index={index}
+                select={selected}
+                setSelected={setSelected}
+                setQuizResult={setQuizResult}
               />
             ) : (
-              <Answer quizResult={quizStatus} />
+              <Answer quizResult={quizResult} />
             )}
           </Content>
           <div className="box-footer">
@@ -83,7 +97,7 @@ function Popup({ show, modalClosed, title, content }) {
             ) : (
               <Button
                 onClick={() => {
-                  alert("Submit");
+                  setQuizStatus("finished");
                 }}
               >
                 Submit

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextOption from "./TextOption";
 import ImageOption from "./ImageOption";
 import Answer from "../answer/Answer";
@@ -7,24 +7,34 @@ function QuestionOptions({
   title,
   value,
   type,
-  reject,
   answer,
   setQuizStatus,
   quizLength,
+  setQuizResult,
+  index,
+  id,
 }) {
-  const [selection, setSelection] = useState(null);
-  const [count, setCount] = useState(1);
+  const [selected, setSelected] = useState(false);
+
+  // useEffect(() => {
+  //   const value = sessionStorage.getItem(id);
+  //   console.log(value);
+  //   setSelected(value);
+  // }, []);
 
   const handleSelect = () => {
-    setCount(count + 1);
-    console.log(selection);
-    console.log(count);
-    if (selection) {
-      //if selection is true, then
-      setQuizStatus(false); //tells quiz that user is not a good fit
+    setSelected(() => true);
+    sessionStorage.setItem(id, answer);
+    console.log(answer);
+
+    if (answer) {
+      //if answer is true, then
+      setQuizResult("no"); //tells quiz that user is not a good fit
+      setQuizStatus("complete");
     }
-    if (count === quizLength) {
-      setQuizStatus(true);
+    if (index + 1 === quizLength && !answer) {
+      setQuizResult("yes");
+      setQuizStatus("complete");
     }
   };
 
@@ -34,17 +44,15 @@ function QuestionOptions({
         <ImageOption
           value={value}
           title={title}
-          reject={reject}
           answer={answer}
-          setSelection={setSelection}
+          selected={selected}
         />
       ) : (
         <TextOption
           value={value}
           title={title}
-          reject={reject}
           answer={answer}
-          setSelection={setSelection}
+          selected={selected}
         />
       )}
     </div>

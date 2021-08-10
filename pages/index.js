@@ -21,6 +21,10 @@ export const getStaticProps = async () => {
 
 export default function Home({ questionList }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [quizStatus, setQuizStatus] = useState("untouched");
+  const [selected, setSelected] = useState(false);
+  const [arrLength, setArrLength] = useState();
+  const [index, setIndex] = useState(0);
 
   const openQuiz = () => {
     setModalIsOpen(true);
@@ -28,7 +32,15 @@ export default function Home({ questionList }) {
 
   const closeQuiz = () => {
     setModalIsOpen(false);
+    setQuizStatus("untouched");
+    sessionStorage.clear();
+    setIndex(0);
   };
+
+  useEffect(() => {
+    const length = questionList.questions.length;
+    setArrLength(length - 1);
+  });
 
   return (
     <div>
@@ -37,6 +49,10 @@ export default function Home({ questionList }) {
         title={"Is Manual for me?"}
         modalClosed={closeQuiz}
         content={questionList}
+        quizStatus={quizStatus}
+        setQuizStatus={setQuizStatus}
+        index={index}
+        setIndex={setIndex}
       />
       <Head>
         <title>Manual</title>

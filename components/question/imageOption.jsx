@@ -24,21 +24,14 @@ const Style = styled.div`
   }
 `;
 
-function ImageOption({ title, value, reject, answer, setSelection }) {
+function ImageOption({ title, value, selected }) {
   const [ans, setAns] = useState(false);
-  const [selected, setSelected] = useState(false);
 
-  const handleSelectClick = () => {
-    setSelected(true);
-    setSelection(reject);
-    console.log("here");
-  };
   return (
     <Style>
       <div
         className={"images" + (selected ? " selected" : "")}
         dangerouslySetInnerHTML={{ __html: value }}
-        onClick={handleSelectClick}
       />
     </Style>
   );

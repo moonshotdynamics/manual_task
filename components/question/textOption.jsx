@@ -22,18 +22,12 @@ const Style = styled.div`
   }
 `;
 
-function TextOption({ title, value, reject, answer, setSelection }) {
-  const [selected, setSelected] = useState(false);
-  const handleSelectClick = () => {
-    setSelected(true);
-    setSelection(reject);
-  };
+function TextOption({ value, selected }) {
   return (
     <Style>
       <div
         className={"answer" + (selected ? " selected" : "")}
         dangerouslySetInnerHTML={{ __html: value }}
-        onClick={handleSelectClick}
       />
     </Style>
   );

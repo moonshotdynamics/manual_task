@@ -20,10 +20,9 @@ const Style = styled.div`
 `;
 
 function Answer({ quizResult }) {
-  console.log(quizResult);
-  return (
-    <Style>
-      {quizResult ? (
+  if (quizResult === "yes") {
+    return (
+      <Style>
         <div className="quizResult">
           <p>
             Great news! We have the perfect treatment for your hair loss.
@@ -38,7 +37,13 @@ function Answer({ quizResult }) {
             , and prepare to say hello to your new hair!
           </p>
         </div>
-      ) : (
+      </Style>
+    );
+  }
+
+  if (quizResult === "no") {
+    return (
+      <Style>
         <div className="quizResult">
           <p>
             Unfortunately, we are unable to prescribe this medication for you.
@@ -47,9 +52,10 @@ function Answer({ quizResult }) {
             your GP or specialist if you would still like this medication.
           </p>
         </div>
-      )}
-    </Style>
-  );
+      </Style>
+    );
+  }
+  return <> </>;
 }
 
 export default Answer;

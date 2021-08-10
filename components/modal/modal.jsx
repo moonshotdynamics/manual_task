@@ -18,6 +18,7 @@ function Popup({ show, modalClosed, title, content }) {
   const [arrLength, setArrLength] = useState();
   const [prevButton, setPrevButton] = useState("Cancel");
   const [quizStatus, setQuizStatus] = useState(null);
+  const [selectedAnswer, setSelectedAnswer] = useState(false);
 
   useEffect(() => {
     const length = content.questions.length;

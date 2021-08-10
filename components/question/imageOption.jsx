@@ -31,6 +31,7 @@ function ImageOption({ title, value, reject, answer, setSelection }) {
   const handleSelectClick = () => {
     setSelected(true);
     setSelection(reject);
+    console.log("here");
   };
   return (
     <Style>

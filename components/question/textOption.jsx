@@ -14,11 +14,13 @@ const Style = styled.div`
       color: #34d1d1;
       cursor: pointer;
       border-bottom: 5px solid #34d1d1;
+      margin: 0;
     }
   }
 
   .selected {
     border-bottom: 5px solid #34d1d1;
+    margin: 0;
   }
 `;
 

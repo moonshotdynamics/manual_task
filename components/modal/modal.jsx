@@ -25,10 +25,8 @@ function Popup({
   index,
   setIndex,
 }) {
-  // const [index, setIndex] = useState(0);
   const [arrLength, setArrLength] = useState();
   const [prevButton, setPrevButton] = useState("Cancel");
-  const [selectedAnswer, setSelectedAnswer] = useState(false);
   const [quizResult, setQuizResult] = useState();
 
   useEffect(() => {
@@ -36,15 +34,14 @@ function Popup({
     setArrLength(length - 1);
   });
 
-  const incIndex = () => {
-    if (index < arrLength) {
-      setIndex(index + 1);
-    }
-  };
-
   const decIndex = () => {
     if (index >= 0) {
       setIndex(index - 1);
+      setQuizResult(null);
+    }
+    if (quizResult === "no") {
+      setQuizResult(null);
+      setQuizStatus("busy");
     }
     setPrevButton("Cancel");
   };
@@ -74,34 +71,17 @@ function Popup({
                 select={selected}
                 setSelected={setSelected}
                 setQuizResult={setQuizResult}
+                setIndex={setIndex}
               />
             ) : (
               <Answer quizResult={quizResult} />
             )}
           </Content>
           <div className="box-footer">
-            {index === 0 ? (
+            {index === 0 || quizResult === "yes" ? (
               <ButtonCancel onClick={modalClosed}>Cancel</ButtonCancel>
             ) : (
-              <ButtonCancel onClick={decIndex}> Previous</ButtonCancel>
-            )}
-
-            {index < arrLength ? (
-              <Button
-                onClick={() => {
-                  incIndex();
-                }}
-              >
-                Next
-              </Button>
-            ) : (
-              <Button
-                onClick={() => {
-                  setQuizStatus("finished");
-                }}
-              >
-                Submit
-              </Button>
+              <ButtonCancel onClick={() => decIndex()}>Previous</ButtonCancel>
             )}
           </div>
         </Wrapper>

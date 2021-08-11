@@ -4,18 +4,25 @@ import styled from "styled-components";
 const Style = styled.div`
   .quizResult {
     display: flex;
-    justify-content: center;
+    text-align: center;
     font-size: 48px;
     font-weight: medium;
     color: #0c3c3d;
-  }
-  .a {
-    font-size: 24px;
-  }
+    justify-content: center;
+    p {
+      font-size: 24px;
+      color: #0c3c3d;
+      text-align: center;
+    }
+    a {
+      font-size: 24px;
+      text-decoration: underline;
 
-  .p {
-    font-size: 24px;
-    color: #0c3c3d;
+      &:hover {
+        color: #34d1d1;
+        transition: 0.01s;
+      }
+    }
   }
 `;
 

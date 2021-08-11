@@ -14,135 +14,8 @@ const Style = styled.div`
     display: flex;
     justify-content: center;
     line-height: 48px;
-  }
-
-  .zeroOne {
-    position: absolute;
-    top: 900px;
-    right: 750px;
-    margin: 1px 56px 0 262px;
-    padding: 162px 167px 343px 218px;
-    z-index: -2;
-    font-weight: bold;
-    font-style: normal;
-    color: #eee;
-    letter-spacing: normal;
-    width: 473px;
-    font-size: 427px;
-    height: 520px;
-  }
-
-  .zeroTwo {
-    position: absolute;
-    top: 1400px;
-    left: 300px;
-    width: 559px;
-    height: 520px;
-    margin: 0 289px 0 0;
-    padding: 185px 188px 139px 60px;
-    font-size: 427px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #eee;
-    z-index: -2;
-  }
-
-  .firstParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .secondParent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 150px;
-    margin-top: 60px;
-  }
-
-  .firstImage {
-    position: fixed;
-    height: 480px;
-    width: 480px;
-    object-fit: contain;
-  }
-
- 
-
-  .heading {
-    color: #34d1d1;
-    font-size: 12px;
-    letter-spacing: 2.4px;
-  }
-
-    .heading2 {
-    color: #34d1d1;
-    font-size: 12px;
-    letter-spacing: 2.4px;
-    text-align: right;
-  }
-
-  .subheading1 {
-    width: 311px;
-    height: 64px;
-    /* margin: 195px 0 12px 80px; */
-    font-family: Helvetica;
-    font-size: 22px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: normal;
-    color: #0c3c3d;
-  }
-
-  .subheading2 {
-    width: 311px;
-    height: 64px;
-    /* margin: 195px 0 12px 80px; */
-    font-family: Helvetica;
-    font-size: 22px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.45;
-    letter-spacing: normal;
-    color: #0c3c3d;
-    text-align: right;
-
-  }
-
-  .textBody1 {
-    width: 300px;
-    height: 132px;
-    /* margin: 12px 11px 118px 80px; */
-    /* font-family: ; */
-    font-size: 12px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.83;
-    letter-spacing: normal;
-    color: #0c3c3d;
-  }
-
-  .textBody2 {
-      width: 300px;
-      height: 132px;
-      /* margin: 12px 11px 118px 80px; */
-      /* font-family: ; */
-      font-size: 12px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.83;
-      letter-spacing: normal;
-      color: #0c3c3d;
-      text-align: right;
+    @media screen and (max-width: 1000px) {
+      font-size: 24px;
     }
   }
 `;
@@ -155,21 +28,136 @@ const Grid = styled.div`
   gap: 0px;
   width: 100%;
   height: 100%;
-  margin-left: 264px;
-  margin-right: 236px;
+  /* margin-left: 264px;
+  margin-right: 236px; */
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
-const SecondParent = styled.div`
-  flex: 1;
-  position: relative;
-  margin-top: 50px;
+const FirstParent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 150px; */
 
-  .secondImage {
-    position: fixed;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .firstImageParent {
+    flex: 1;
+    margin-left: 60%;
+
+    @media screen and (max-width: 1000px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .firstImage {
     height: 480px;
     width: 480px;
     object-fit: contain;
-    right: -800px;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+  }
+
+  h6 {
+    color: #34d1d1;
+    margin-bottom: 17px;
+    letter-spacing: 2.4px;
+    font-weight: bold;
+    font-size: 12px;
+
+    @media screen and (max-width: 1000px) {
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+
+  h5 {
+    margin-bottom: 12px;
+    color: #0c3c3d;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 100;
+    width: 250px;
+    @media screen and (max-width: 1000px) {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 2px;
+    }
+  }
+
+  p {
+    width: 300px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0;
+    font-weight: bold;
+    color: #0c3c3d;
+  }
+
+  h2 {
+    position: absolute;
+    right: 650px;
+    z-index: -2;
+    font-weight: bold;
+    color: #eeeeee;
+    letter-spacing: 0;
+    width: 473px;
+    font-size: 470px;
+    height: 520px;
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+`;
+
+const SecondParent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+
+  @media screen and (max-width: 1000px) {
+    margin-right: 0;
+    margin-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .secondImageParent {
+    flex: 1;
+    margin-right: 50%;
+
+    @media screen and (max-width: 1000px) {
+      margin-right: auto;
+      margin-left: auto;
+      order: 1;
+    }
+  }
+
+  .secondImage {
+    height: 480px;
+    width: 480px;
+    object-fit: contain;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      order: 1;
+    }
   }
 
   h6 {
@@ -177,8 +165,13 @@ const SecondParent = styled.div`
     letter-spacing: 2.4px;
     font-weight: bold;
     font-size: 12px;
-    margin-left: 200px;
+    margin-left: 250px;
     color: #34d1d1;
+
+    @media screen and (max-width: 1000px) {
+      text-align: center;
+      margin-left: 0px;
+    }
   }
 
   h5 {
@@ -194,6 +187,16 @@ const SecondParent = styled.div`
     text-align: right;
     color: #0c3c3d;
     margin-left: 135px;
+
+    @media screen and (max-width: 1000px) {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      width: 250px;
+      height: 64px;
+    }
   }
 
   p {
@@ -208,13 +211,19 @@ const SecondParent = styled.div`
     letter-spacing: normal;
     text-align: right;
     color: #0c3c3d;
-    margin-left: 135px;
+    margin-left: 145px;
+
+    @media screen and (max-width: 1000px) {
+      margin: 0;
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
   h2 {
     position: absolute;
-    top: -400px;
-    left: 350px;
+    top: 1150px;
+    left: 550px;
     z-index: -2;
     font-weight: bold;
     color: #eeeeee;
@@ -222,6 +231,35 @@ const SecondParent = styled.div`
     width: 473px;
     font-size: 470px;
     height: 520px;
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
+  }
+`;
+
+const FlexColumn = styled.div`
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 80px;
+  @media screen and (max-width: 1000px) {
+    justify-content: start;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+const FlexColumn1 = styled.div`
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 80px;
+  @media screen and (max-width: 1000px) {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
@@ -231,28 +269,29 @@ function Main() {
       <div className="title">
         <h2>What we can help with</h2>
       </div>
-      <div className="firstParent">
+      <FirstParent>
         <Grid>
-          <Image src={Photo1} className="firstImage" />
-          <div>
-            <h2 className="zeroOne">01</h2>
-            <h6 className="heading">HAIR LOSS</h6>
-            <h5 className="subheading1">
-              Hair loss needn’t be irreversible. We can help!
-            </h5>
-            <p className="textBody1">
+          <div className="firstImageParent">
+            <Image src={Photo1} className="firstImage" />
+          </div>
+
+          <FlexColumn>
+            <h2>01</h2>
+            <h6>HAIR LOSS</h6>
+            <h5>Hair loss needn’t be irreversible. We can help!</h5>
+            <p>
               Hair loss needn’t be irreversible. There’s a scientifically proven
               way that’s most effective in keeping and regrowing your hair. It’s
               all to do with blocking a pesky hormone called DHT. That’s the bad
               guy behind hair loss. And you can keep him at bay. The choice is
               yours.
             </p>
-          </div>
+          </FlexColumn>
         </Grid>
-      </div>
+      </FirstParent>
       <SecondParent>
         <Grid>
-          <div>
+          <FlexColumn1>
             <h2>02</h2>
             <h6>ERECTILE DYSFUNCTION</h6>
             <h5>Erections can be a tricky thing. But no need to feel down!</h5>
@@ -261,8 +300,10 @@ function Main() {
               the erection department. We can help you figure out possible
               reasons why. And prescribe a pill if needed.
             </p>
+          </FlexColumn1>
+          <div className="secondImageParent">
+            <Image src={Photo2} className="secondImage" />
           </div>
-          <Image src={Photo2} className="secondImage" />
         </Grid>
       </SecondParent>
     </Style>

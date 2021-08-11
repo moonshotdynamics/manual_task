@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import heroImage from "../../public/assets/img/hair-cat-header.jpg";
 import styles from "../../styles/Home.module.css";
 import styled from "styled-components";
 import logo from "../../public/assets/img/svg/manual-symbol.svg";

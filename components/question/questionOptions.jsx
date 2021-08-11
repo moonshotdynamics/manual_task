@@ -13,18 +13,26 @@ function QuestionOptions({
   setQuizResult,
   index,
   id,
+  questionValue,
+  setIndex,
 }) {
   const [selected, setSelected] = useState(false);
 
   // useEffect(() => {
-  //   const value = sessionStorage.getItem(id);
-  //   console.log(value);
-  //   setSelected(value);
-  // }, []);
+  //   const stored = sessionStorage.getItem(id);
+  //   setSelected(stored);
+  // }, [index]);
+
+  const incIndex = () => {
+    if (index < quizLength) {
+      setIndex(index + 1);
+    }
+  };
 
   const handleSelect = () => {
     setSelected(() => true);
-    sessionStorage.setItem(id, answer);
+    sessionStorage.setItem(id, questionValue);
+    incIndex();
 
     if (answer) {
       //if answer is true, then

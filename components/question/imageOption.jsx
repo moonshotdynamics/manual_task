@@ -15,6 +15,7 @@ const Style = styled.div`
       border-radius: 10px;
       transform: scale(1.1);
       transition: all 0.2s;
+      margin: 0;
     }
   }
 
@@ -24,7 +25,7 @@ const Style = styled.div`
   }
 `;
 
-function ImageOption({ title, value, selected }) {
+function ImageOption({ value, selected }) {
   const [ans, setAns] = useState(false);
 
   return (

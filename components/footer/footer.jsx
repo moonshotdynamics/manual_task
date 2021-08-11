@@ -7,12 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Style = styled.div`
-  /* .container {
-    display: flex;
-    background: #e5f5f4;
-    width: 100%;
-    height: 100%;
-  } */
 
   .footer {
   display: flex;
@@ -36,24 +30,28 @@ const Style = styled.div`
 
 
 
-.footer__links {
+.footerLinks {
   display: flex;
   margin-left: 250px;
 }
 
-.footer__link {
+.footerLink {
   display: flex;
   flex-direction: column;
-  margin-left: 100px; //responsive low res bug
+  margin-left: 100px; 
 
   &__title {
     color: 
 #34d1d1;
     letter-spacing: 2.4px;
-    font-family: $titleFont;
     font-weight: bold;
     font-size: 12px;
     padding-bottom: 17px;
+
+    @media screen and (max-width: 1000px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   a {
@@ -62,7 +60,6 @@ const Style = styled.div`
     letter-spacing: 0px;
     color: 
 #0c3c3d;
-    font-family: $parFont;
   }
 }
 
@@ -72,7 +69,7 @@ const Style = styled.div`
 }
 
 .social_media_icons_img {
-    margin: 20px 30px auto 30px; 
+    margin: 0 15px auto 0; 
 }
 
 @media screen and (max-width: 1125px) {
@@ -87,7 +84,7 @@ const Style = styled.div`
     }
   }
 
-  .footer__links {
+  .footerLinks {
     margin: 0;
   }
 }
@@ -96,7 +93,6 @@ const Style = styled.div`
   margin-top: 100px;
   color: rgba(108, 108, 108, 0.5);
   line-height: 22px;
-  font-family: $sans;
   font-size: 12px;
 }
 
@@ -105,14 +101,11 @@ const Style = styled.div`
 }
 
 @media screen and (max-width: 819px) {
-  .footer__link {
+  .footerLink {
     padding-top: 1rem;
-    margin-left: 0px; //responsive low res bug fix
+       margin: auto
 
-    a,
-    h3 {
-      text-align: center;
-    }
+  
   }
 
   .social-media {
@@ -124,8 +117,10 @@ const Style = styled.div`
   }
 }
 
+
+
 @media screen and (max-width: 550px) {
-  .footer__links {
+  .footerLinks {
     flex-direction: column;
 
     a,
@@ -134,40 +129,49 @@ const Style = styled.div`
     }
   }
 
-  .footer__links {
+  .footerLinks {
     justify-content: center;
   }
 
   .social-media {
     align-items: center;
     margin-left: 0px;
+
+    @media screen and (max-width: 1000px){
+      margin-left: auto;
+    }
   }
 }
 
   }
 `;
 
-const UL = styled.ul`
-  list-style: none;
+const FlexBox = styled.div`
+  display: flex;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
 `;
 
 function Footer() {
   return (
     <Style>
       <div className="footer">
-        <Image className="logo" src={logo__footer} alt="footer__logo" />
-
-        <div className="footer__links">
-          <div className="footer__link">
-            <h3 className="footer__link__title">PRODUCT</h3>
+        <FlexBox>
+          <Image className="logo" src={logo__footer} alt="footer__logo" />
+          <div className="footerLink">
+            <h3 className="footerLink__title">PRODUCT</h3>
             <Link href="/">Popular</Link>
             <Link href="/">Trending</Link>
             <Link href="/">Guided</Link>
             <Link href="/">Products</Link>
           </div>
 
-          <div className="footer__link company-parent">
-            <h3 className="footer__link__title">COMPANY</h3>
+          <div className="footerLink company-parent">
+            <h3 className="footerLink__title">COMPANY</h3>
 
             <Link href="/">Press Releases</Link>
             <Link href="/">Mission</Link>
@@ -175,8 +179,8 @@ function Footer() {
             <Link href="/">About</Link>
           </div>
 
-          <div className="footer__link">
-            <h3 className="footer__link__title">INFO</h3>
+          <div className="footerLink">
+            <h3 className="footerLink__title">INFO</h3>
 
             <Link href="/">Support</Link>
             <Link href="/">Custom Service</Link>
@@ -184,15 +188,14 @@ function Footer() {
             <Link href="/">Products</Link>
           </div>
 
-          <div className="footer__link social-media">
-            <h3 className="footer__link__title">FOLLOW US</h3>
+          <div className="footerLink social-media">
+            <h3 className="footerLink__title">FOLLOW US</h3>
 
             <div className="social_media_icons">
               <div className="social_media_icons_img">
-                <FaFacebookF />{" "}
+                <FaFacebookF />
               </div>
               <div className="social_media_icons_img">
-                {" "}
                 <FaTwitter />
               </div>
               <div className="social_media_icons_img">
@@ -200,7 +203,7 @@ function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </FlexBox>
 
         <hr />
 

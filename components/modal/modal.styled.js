@@ -4,7 +4,7 @@ export const Modal = styled.div`
   position: absolute;
   z-index: 500;
   background-color: white;
-  width: 90%;
+  width: 100%;
   /* border: 1px solid #ccc; */
   /* border-radius: 10px; */
   padding: 16px;
@@ -14,8 +14,7 @@ export const Modal = styled.div`
   transition: all 0.3s ease-out;
   @media (min-width: 600px) {
     .Modal {
-      width: 90%;
-      /* left: calc(50% - 250px); */
+      width: 100%;
     }
   }
 `;
@@ -41,7 +40,7 @@ export const Content = styled.div`
 export const Close = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: 100px;
   color: #0c3c3d;
 
   &:hover {
@@ -69,10 +68,11 @@ export const Wrapper = styled.section`
     }
   }
   .box-footer {
+    margin-top: 25px;
     height: 85px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border-top: 1px solid #c7c7c7;
     @media (max-width: 900px) {
       height: 80px;
@@ -110,7 +110,6 @@ export const Button = styled.button`
   width: 146px;
   height: 37.37px;
   font-style: normal;
-  /* margin-right: 37.5px; */
   text-align: center;
   border: none;
   border-radius: 10px;

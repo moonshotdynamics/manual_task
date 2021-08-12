@@ -18,11 +18,6 @@ function QuestionOptions({
 }) {
   const [selected, setSelected] = useState(false);
 
-  // useEffect(() => {
-  //   const stored = sessionStorage.getItem(id);
-  //   setSelected(stored);
-  // }, [index]);
-
   const incIndex = () => {
     if (index < quizLength) {
       setIndex(index + 1);

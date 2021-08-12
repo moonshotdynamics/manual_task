@@ -10,8 +10,10 @@ import Modal from "../components/modal/Modal";
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    "https://manual-case-study.herokuapp.com/questionnaires/972423.json"
+    // "https://manual-case-study.herokuapp.com/questionnaires/972423.json"
+    "https://manual-case-study.herokuapp.com/questionnaires/6-part.json"
   );
+
   const data = await res.json();
 
   return {
